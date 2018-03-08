@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">音频剪辑</string>
+    <!-- tab -->
+    <string name="tab_one">TAB1</string>
+    <string name="tab_two">TAB2</string>
+    <string name="tab_three">TAB3</string>
+    <string name="tab_four">TAB4</string>
+    <string name="tab_five">TAB5</string>
+</resources>
