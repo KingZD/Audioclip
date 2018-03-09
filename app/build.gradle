@@ -55,9 +55,7 @@ android {
     }
 
     productFlavors {
-        official {
-            dimension "default"
-        }
+        official {}
 
         // 输出不同平台且带版本号的apk
         applicationVariants.all { variant ->
@@ -79,8 +77,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    //公用依赖
-    compile project(':common:http')
+    //核心依赖
+    compile project(':core')
     //状态栏
     compile rootProject.ext.dependencies["statusbar"]
     //分包

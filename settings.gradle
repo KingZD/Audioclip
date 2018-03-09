@@ -1,4 +1,4 @@
-include ':app'
+include ':app', ':core'
 
 // common (通用依赖库)
 include ':common:http'

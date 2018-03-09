@@ -1,7 +1,9 @@
 package com.zed.audioclip
 
 import android.support.multidex.MultiDexApplication
+import com.zed.common.util.LogUtils
 import com.zed.common.util.Utils
+import com.zed.core.CoreController
 
 /**
  * @author zd
@@ -13,9 +15,25 @@ import com.zed.common.util.Utils
  * @email 1053834336@qq.com
  */
 class ZDApplication : MultiDexApplication() {
+    private var fc: CoreController? = null
+    private val TAG = ZDApplication::class.simpleName
 
     override fun onCreate() {
         super.onCreate()
         Utils.init(this)
+    }
+
+    /**
+     * 获取处理
+     */
+    fun getCoreController(): CoreController {
+        try {
+            if (fc == null)
+                fc = CoreController(applicationContext)
+        } catch (e: Exception) {
+            LogUtils.e(TAG, e.localizedMessage)
+            return getCoreController()
+        }
+        return fc as CoreController
     }
 }
