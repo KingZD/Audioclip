@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 android {
 
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
 
@@ -27,5 +28,5 @@ android {
 
 dependencies {
     //公用依赖
-    compile project(':common:http')
+    compile 'com.github.KingZD:kotlin-lib-common:V1.0'
 }

@@ -11,7 +11,7 @@ import java.util.*
  * Created by zed on 2018/3/9.
  */
 abstract class Core {
-    val TAG = this::class.simpleName
+    val TAG = javaClass.simpleName
     var mFfmpegBin: String = ""
 
     constructor(context: Context) {

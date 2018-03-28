@@ -16,7 +16,7 @@ import com.zed.core.CoreController
  */
 class ZDApplication : MultiDexApplication() {
     private var fc: CoreController? = null
-    private val TAG = ZDApplication::class.simpleName
+    private val TAG = javaClass.simpleName
 
     override fun onCreate() {
         super.onCreate()
