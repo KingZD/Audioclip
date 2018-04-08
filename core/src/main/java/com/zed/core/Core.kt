@@ -37,6 +37,7 @@ abstract class Core {
         return try {
             val f = File(ctx.getDir("bin", 0), filename)
             if (f.exists()) {
+                if (!upgrade) return f.canonicalPath
                 f.delete()
             }
             copyRawFile(ctx, resId, f, "0755")
@@ -161,8 +162,7 @@ abstract class Core {
                 shellLine.contains("Duration:") -> {
                     // Duration: 00:01:01.75, start: 0.000000, bitrate: 8184 kb/s
                     val timecode = shellLine.split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()[0].split(":".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-                    var duration = 0.0
-                    duration = java.lang.Double.parseDouble(timecode[1].trim { it <= ' ' }) * 60.0 * 60.0 //hours
+                    var duration = java.lang.Double.parseDouble(timecode[1].trim { it <= ' ' }) * 60.0 * 60.0 //hours
                     duration += java.lang.Double.parseDouble(timecode[2].trim { it <= ' ' }) * 60 //minutes
                     duration += java.lang.Double.parseDouble(timecode[3].trim { it <= ' ' }) //seconds
                     mMedia.duration = duration

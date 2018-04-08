@@ -28,5 +28,5 @@ android {
 
 dependencies {
     //公用依赖
-    compile 'com.github.KingZD:kotlin-lib-common:V1.0'
+    compile 'com.github.KingZD:kotlin-lib-common:1.1'
 }

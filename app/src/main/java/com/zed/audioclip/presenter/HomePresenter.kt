@@ -1,5 +1,6 @@
 package com.zed.audioclip.presenter
 
+import android.Manifest
 import android.support.v7.widget.StaggeredGridLayoutManager
 import android.view.View
 import android.view.ViewGroup
@@ -7,11 +8,20 @@ import com.bytc.qudong.control.fragment.UIHomeConstraint
 import com.facebook.rebound.SimpleSpringListener
 import com.facebook.rebound.Spring
 import com.facebook.rebound.SpringChain
+import com.google.gson.Gson
 import com.scwang.smartrefresh.layout.api.RefreshLayout
+import com.tbruyelle.rxpermissions2.RxPermissions
 import com.zed.audioclip.adapter.HomeTypeAdapter
 import com.zed.audioclip.base.BasePresenter
+import com.zed.audioclip.net.bean.SongBean
 import com.zed.audioclip.net.bean.HomeBean
+import com.zed.audioclip.util.MusicUtil
+import com.zed.common.util.LogUtils
 import com.zed.image.round.CornerType
+import io.reactivex.Observable
+import io.reactivex.ObservableOnSubscribe
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import java.util.*
 
 /**
@@ -33,6 +43,27 @@ class HomePresenter(view: UIHomeConstraint) : BasePresenter<UIHomeConstraint, Ho
         getView()?.getSmartPull()?.setOnLoadmoreListener(this)
         getView()?.getSmartPull()?.setOnRefreshListener(this)
         homeIndex()
+        RxPermissions(mActivity!!).request(Manifest.permission.READ_EXTERNAL_STORAGE).subscribe({
+            if (it) {
+                initMusic()
+            }
+        })
+    }
+
+    private fun initMusic() {
+        Observable
+                .create(ObservableOnSubscribe<List<SongBean>> {
+                    LogUtils.i(TAG, "create".plus(Thread.currentThread().name))
+                    it.onNext(MusicUtil.getMusicData(mActivity))
+                })
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({
+                    LogUtils.i(TAG, "forEach".plus(Thread.currentThread().name))
+                    it.forEach {
+                        LogUtils.i("Music", Gson().toJson(it))
+                    }
+                })
     }
 
     //精选

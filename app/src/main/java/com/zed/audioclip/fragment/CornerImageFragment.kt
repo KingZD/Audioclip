@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.fragment_corner_image.*
  * @describe TODO
  * @email 1053834336@qq.com
  */
-class CornerImageFragment : BaseFragment<HomePresenter>(), UIHomeConstraint {
+class CornerImageFragment : BaseFragment(), UIHomeConstraint {
     override fun getRlView(): XRecyclerView? {
         return rv
     }

@@ -4,6 +4,7 @@ import android.view.View
 import com.zed.audioclip.R
 import com.zed.audioclip.base.BaseActivity
 import com.zed.audioclip.fragment.HomeFragment
+import com.zed.audioclip.fragment.HomeFragmentV1
 import com.zed.audioclip.fragment.SecondFragment
 import com.zed.audioclip.fragment.ThirdFragment
 import kotlinx.android.synthetic.main.activity_main.*
@@ -20,7 +21,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : BaseActivity() {
 
     //"同一模块下可见"
-    private var homeFragment: HomeFragment? = null
+    private var homeFragment: HomeFragmentV1? = null
     private var secondFragment: SecondFragment? = null
     private var thirdFragment: ThirdFragment? = null
     override fun setLayoutId(): Int {
@@ -39,7 +40,7 @@ class MainActivity : BaseActivity() {
         val oCid = rgTab.tag ?: -1
 
         if (checkedId == R.id.rbOne && oCid != R.id.rbOne) {
-            homeFragment = homeFragment ?: HomeFragment()
+            homeFragment = homeFragment ?: HomeFragmentV1()
             repalce(homeFragment)
         } else if (checkedId == R.id.rbTwo && oCid != R.id.rbTwo) {
             secondFragment = secondFragment ?: SecondFragment()
@@ -48,10 +49,10 @@ class MainActivity : BaseActivity() {
             thirdFragment = thirdFragment ?: ThirdFragment()
             repalce(thirdFragment)
         } else if (checkedId == R.id.rbFour && oCid != R.id.rbFour) {
-            homeFragment = homeFragment ?: HomeFragment()
+            homeFragment = homeFragment ?: HomeFragmentV1()
             repalce(homeFragment)
         } else if (checkedId == R.id.rbFive && oCid != R.id.rbFive) {
-            homeFragment = homeFragment ?: HomeFragment()
+            homeFragment = homeFragment ?: HomeFragmentV1()
             repalce(homeFragment)
         }
         //默认设置选中的viewtag

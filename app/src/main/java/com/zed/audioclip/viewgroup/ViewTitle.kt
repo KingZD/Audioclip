@@ -26,7 +26,7 @@ import kotlinx.android.synthetic.main.view_title.view.*
  */
 class ViewTitle : FrameLayout, OnClickListener, UIViewConstraint<BaseModel> {
     override fun updateUI(data: BaseModel) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        TODO("not implemented") //To change body of created functions use FileFolder | Settings | FileFolder Templates.
     }
 
     //    UIViewConstraint
@@ -188,7 +188,7 @@ class ViewTitle : FrameLayout, OnClickListener, UIViewConstraint<BaseModel> {
     }
 
     override fun onDestory() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        TODO("not implemented") //To change body of created functions use FileFolder | Settings | FileFolder Templates.
     }
 
 }

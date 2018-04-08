@@ -50,8 +50,8 @@ ext {
                     "rxlifecycle-components"     : "com.trello.rxlifecycle2:rxlifecycle-components:2.0.1",
                     //eventbus
                     "eventbus"                   : "org.greenrobot:eventbus:3.0.0",
-                    // dexter 权限管理
-                    "dexter"                     : "com.karumi:dexter:4.1.0",
+                    // 权限管理
+                    "rxpermissions"              : "com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar",
                     //logger
                     "logger"                     : "com.orhanobut:logger:1.15",
                     //CollapsibleTextView 显示全文与隐藏功能

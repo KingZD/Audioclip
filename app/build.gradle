@@ -84,4 +84,5 @@ dependencies {
     //分包
     compile rootProject.ext.dependencies["multidex"]
     compile rootProject.ext.dependencies["rebound"]
+    compile rootProject.ext.dependencies["rxpermissions"]
 }

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen_dp_10">
+
+    <ImageView
+        android:id="@+id/ivMusicImg"
+        android:layout_width="@dimen/dimen_dp_80"
+        android:layout_height="@dimen/dimen_dp_80"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/tvMusicName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_dp_10"
+        android:layout_marginStart="@dimen/dimen_dp_10"
+        android:layout_toEndOf="@+id/ivMusicImg"
+        android:layout_toRightOf="@+id/ivMusicImg"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="追光者"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/dimen_sp_16" />
+
+    <TextView
+        android:id="@+id/tvMusicAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvMusicName"
+        android:layout_alignStart="@+id/tvMusicName"
+        android:layout_below="@+id/tvMusicName"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="演唱者:杰克马"
+        android:textColor="@color/color_666666"
+        android:textSize="@dimen/dimen_dp_13" />
+
+    <TextView
+        android:id="@+id/tvMusicSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ivMusicImg"
+        android:layout_alignLeft="@+id/tvMusicName"
+        android:layout_alignStart="@+id/tvMusicName"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="音乐长度:00:30"
+        android:textColor="@color/color_666666" />
+
+    <TextView
+        android:id="@+id/tvMusicType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tvMusicSize"
+        android:layout_marginLeft="@dimen/dimen_dp_10"
+        android:layout_marginStart="@dimen/dimen_dp_10"
+        android:layout_toEndOf="@+id/tvMusicSize"
+        android:layout_toRightOf="@+id/tvMusicSize"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="音乐类型:ogg"
+        android:textColor="@color/color_666666" />
+</RelativeLayout>

@@ -5,9 +5,9 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.zed.audioclip.R
 import com.zed.audioclip.base.BaseFragment
 import com.zed.audioclip.presenter.HomePresenter
-import com.zed.audioclip.util.MusicUtil
+import com.zed.audioclip.presenter.HomePresenterV1
 import com.zed.view.XRecyclerView
-import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_home_v1.*
 
 /**
  * @author zd
@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.fragment_home.*
  * @describe TODO
  * @email 1053834336@qq.com
  */
-class HomeFragment : BaseFragment(), UIHomeConstraint {
+class HomeFragmentV1 : BaseFragment(), UIHomeConstraint {
     override fun getRlView(): XRecyclerView? {
         return rv
     }
@@ -28,10 +28,10 @@ class HomeFragment : BaseFragment(), UIHomeConstraint {
     }
 
     override fun setLayoutId(): Int {
-        return R.layout.fragment_home
+        return R.layout.fragment_home_v1
     }
 
     override fun initView() {
-        setPresenter(HomePresenter(this))
+        setPresenter(HomePresenterV1(this))
     }
 }
